@@ -10,6 +10,6 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 source <(gopass completion bash)
 source $HOME/.zsh/4aliases.zsh
-export EDITOR=vim
+export EDITOR={{ .terminal.userEditor }}
 export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
