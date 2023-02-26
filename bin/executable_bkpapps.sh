@@ -7,4 +7,4 @@ tr '\n' ' ' > $HOME/bin/manuallyinstalledpkgs.txt
 pacman -Qmeq | tr '\n' ' ' > $HOME/bin/aurpackages.txt
 #flatpak list --columns=application --app > $HOME/bin/installedflatpaks.txt
 #brew leaves > $HOME/bin/brewpackages.txt
-chezmoi re-add
+chezmoi add $HOME/bin/manuallyinstalledpkgs.txt
