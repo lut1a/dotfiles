@@ -1,0 +1,15 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+PS1='[\u@\h \W]\$ '
+source <(gopass completion bash)
+source $HOME/.zsh/4aliases.zsh
+export EDITOR=vim
+export GIT_EDITOR=$EDITOR
+export VISUAL=$EDITOR
