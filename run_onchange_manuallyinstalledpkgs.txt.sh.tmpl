@@ -1,5 +1,4 @@
- {{- if eq .chezmoi.osRelease.name "Arch Linux" }} 
 #!/usr/bin/env bash
-
+{{ if eq .chezmoi.osRelease.name "Arch Linux" -}} 
 xargs -a $HOME/bin/manuallyinstalledpkgs.txt sudo pacman -S --needed
-{{- end }}
+{{ end -}}
