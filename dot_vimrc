@@ -1,0 +1,35 @@
+set nocompatible
+syntax on
+if has("autocmd")
+    filetype plugin indent on
+endif
+packloadall
+set encoding=utf-8
+set number
+set relativenumber
+"set wrap
+"set textwidth=80
+set formatoptions=tcqrn1
+set showmatch
+set errorbells
+set visualbell
+set hlsearch
+set smartcase
+set ignorecase
+set incsearch
+set autoindent
+set cindent
+set shiftwidth=4
+set expandtab
+set noshiftround
+set softtabstop=4
+set ruler
+set undolevels=1000
+set backspace=indent,eol,start
+set laststatus=2
+set showmode
+set showcmd
+" colorscheme
+set termguicolors
+let ayucolor="dark"
+colorscheme ayu

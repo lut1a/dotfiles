@@ -1,0 +1,2 @@
+PATH=$HOME/bin:/usr/local/go/bin:$HOME/go/bin:$PATH
+export PATH

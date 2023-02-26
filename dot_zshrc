@@ -1,0 +1,5 @@
+echo -n -e "\033]0;ZSH\007"
+for config (~/.zsh/*.zsh) source $config
+source ~/.zsh/syntaxhigh/zsh-syntax-highlighting.zsh
+source ~/.zsh/autosugg/zsh-autosuggestions.zsh
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"

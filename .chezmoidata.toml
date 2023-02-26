@@ -1,0 +1,6 @@
+[terminal]
+userShell = "zsh"
+userTerminal = "kitty"
+userEditor = "vim"
+fontSize = "18.0"
+fontFamily = "JetBrains Mono"

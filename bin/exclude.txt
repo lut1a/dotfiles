@@ -1,0 +1,5 @@
+.*
+lost+found/
+perl5/
+Downloads/
+
