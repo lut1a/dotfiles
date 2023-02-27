@@ -5,3 +5,7 @@
 [data]
     email = {{ $email | quote }}
     computerType = {{ $computerType | quote }}
+
+encryption = "gpg"
+[gpg]
+    recipient = {{ $email | quote }}
