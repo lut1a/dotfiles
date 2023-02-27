@@ -30,10 +30,12 @@ set laststatus=2
 set showmode
 set showcmd
 
+{{- if eq .chezmoi.osRelease.name "Arch Linux" }} 
 set clipboard=unnamedplus
 xnoremap "+y y:call system("wl-copy", @")<cr>
 nnoremap "+p :let @"=substitute(system("wl-paste --no-newline"), '<C-v><C-m>', '', 'g')<cr>p
 nnoremap "*p :let @"=substitute(system("wl-paste --no-newline --primary"), '<C-v><C-m>', '', 'g')<cr>p
+{{- end }}
 
 set omnifunc=syntaxcomplete#Complete
 
