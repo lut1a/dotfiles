@@ -30,6 +30,8 @@ set laststatus=2
 set showmode
 set showcmd
 
+xnoremap <silent> <leader>y y:call system("wl-copy --trim-newline", @*)<cr>:call system("wl-copy -p --trim-newline", @*)<cr>
+
 set omnifunc=syntaxcomplete#Complete
 
 " colorscheme
