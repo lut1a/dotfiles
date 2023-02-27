@@ -10,6 +10,8 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 source <(gopass completion bash)
 source $HOME/.zsh/4aliases.zsh
-export EDITOR={{ .terminal.userEditor }}
+export EDITOR={{ .userEditor }}
 export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+export PAGER={{ .pager }}

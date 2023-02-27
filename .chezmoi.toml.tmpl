@@ -1,10 +1,16 @@
 {{- $email := promptStringOnce . "email" "Email address" -}}
 
-{{- $computerType := promptStringOnce . "computerType" "Type of computer used" -}}
+{{- $computerType := promptStringOnce . "personal" "Type of computer used" -}}
+
+{{- $pager := promptStringOnce . "less" "Configured pager" -}}
+
+{{- $userEditor := promptStringOnce . "vim" "Configured editor" -}}
 
 [data]
     email = {{ $email | quote }}
     computerType = {{ $computerType | quote }}
+    pager = {{ $pager | quote }}
+    userEditor = {{ $userEditor | quote }}
 
 encryption = "gpg"
 [gpg]
