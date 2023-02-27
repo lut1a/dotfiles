@@ -10,7 +10,8 @@ export EDITOR={{ .terminal.userEditor }}
 export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 bindkey "^R" history-incremental-search-backward
-
+SSH_AGENT_PID=""
+SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/gnupg/S.gpg-agent.ssh"
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 bindkey '^P' history-beginning-search-backward
