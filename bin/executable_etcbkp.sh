@@ -21,4 +21,3 @@ cp /etc/mkinitcpio.d/* $HOME/etcbkp/mkinitcpio.d/
 cp /etc/pacman.d/hooks/95-systemd-boot.hook $HOME/etcbkp/pacman.d/hooks/95-systemd-boot.hook
 
 cp /etc/modprobe.d/nouveau_blacklist.conf $HOME/etcbkp/modprobe.d/nouveau_blacklist.conf
-chezmoi re-add

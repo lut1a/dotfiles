@@ -30,7 +30,7 @@ set laststatus=2
 set showmode
 set showcmd
 
-{{- if eq .chezmoi.osRelease.name "Arch Linux" }} 
+{{- if eq .computerType "personal" }} 
 set clipboard=unnamedplus
 xnoremap "+y y:call system("wl-copy", @")<cr>
 nnoremap "+p :let @"=substitute(system("wl-paste --no-newline"), '<C-v><C-m>', '', 'g')<cr>p

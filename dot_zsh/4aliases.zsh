@@ -24,7 +24,6 @@ alias now='date +"%T"'
 alias nowdate='date +"%d-%m-%Y"'
 alias wget='wget -c'
 alias s='kitty +kitten ssh'
-alias cupdate='chezmoi update && chezmoi apply'
 alias cedit='chezmoi edit --apply'
 alias sscp='rsync --verbose --progress --partial'
 

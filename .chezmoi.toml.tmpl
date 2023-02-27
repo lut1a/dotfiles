@@ -6,11 +6,14 @@
 
 {{- $userEditor := promptStringOnce . "vim" "Configured editor" -}}
 
+{{- $bkpdrv := promptStringOnce . "none" "Main backup drive label" -}}
+
 [data]
     email = {{ $email | quote }}
     computerType = {{ $computerType | quote }}
     pager = {{ $pager | quote }}
     userEditor = {{ $userEditor | quote }}
+    bkpdrv = {{ $bkpdrv | quote }} 
 
 encryption = "gpg"
 [gpg]

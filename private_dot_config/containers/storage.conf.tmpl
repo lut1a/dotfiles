@@ -27,9 +27,11 @@ driver = "overlay"
 # restorecon -R -v /NEWSTORAGEPATH
 #graphroot = "/var/lib/containers/storage"
 
-{{- if eq .chezmoi.hostname "archelysium" }}
 # Storage path for rootless users
 #
+# rootless_storage_path = "$HOME/.local/share/containers/storage"
+
+{{- if eq .bkpdrv "t5intbkp" }}
 rootless_storage_path = "/mnt/t5intbkp/.containers/strg"
 {{- end }}
 [storage.options]
