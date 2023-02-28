@@ -2,6 +2,25 @@
 # ~/.bashrc
 #
 
+_checkexec ()
+{
+    command -v "$1" > /dev/null
+}
+
+if [ -d "$HOME"/bin ]
+then
+    PATH=$PATH:"$HOME"/bin
+fi
+
+if [ -d "$HOME"/go/bin ]
+then
+    PATH=$PATH:"$HOME"/go/bin
+fi
+
+if [ -d /usr/local/go/bin ]
+then
+    PATH=$PATH:/usr/local/go/bin
+fi
 if [ -n "$SSH_CONNECTION" ]
 then
     export PS1="\u@\h: \w \$ "
@@ -23,6 +42,11 @@ fi
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+if _checkexec dircolors
+then
+    dircolors_data="$HOME/.dircolors"
+    test -r $dircolors_data && eval "$(dircolors -b ${dircolors_data})" || eval "$(dircolors -b)"
+fi
 source <(gopass completion bash)
 source $HOME/.zsh/4aliases.zsh
 export EDITOR={{ .userEditor }}
@@ -30,3 +54,5 @@ export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 export PAGER={{ .pager }}
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+PATH=$HOME/bin:/usr/local/go/bin:$HOME/go/bin:$PATH
+export PATH
