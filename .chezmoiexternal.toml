@@ -1,9 +1,3 @@
-[".vim/pack/lut1a/start/ayu"]
-    type = "archive"
-    url = "https://github.com/ayu-theme/ayu-vim/archive/refs/heads/master.zip"
-    exact = true
-    stripComponents = 1
-    refreshPeriod = "168h"
 [".vim/pack/lut1a/start/surround"]
     type = "archive"
     url = "https://github.com/tpope/vim-surround/archive/refs/heads/master.zip"
