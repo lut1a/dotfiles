@@ -32,22 +32,37 @@ alias cedit='chezmoi edit --apply'
 alias sscp='rsync --verbose --progress --partial'
 
 # COLORS!
-alias ls='ls -h --color=auto'
+alias ls='ls -pvh --color=auto --group-directories-first'
 alias grep='grep --color=auto'
 alias egrep='grep -E --color=auto'
 alias fgrep='grep -F --color=auto'
-#LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
-#export LS_COLORS
-alias diff='colordiff'
-#install colordiff package
+alias diff='diff --color=auto'
 
 ######
 alias ll='ls -l'
-alias lla='ls -la'
-alias la='ls -a'
+alias lla='ls -lA'
+alias la='ls -A'
 
 
 alias h='history'
 alias j='jobs -l'
 alias bc='bc -l'
 
+
+man ()
+{
+    env \
+        LESS_TERMCAP_mb=$(tput bold; tput setaf 6) \
+        LESS_TERMCAP_md=$(tput bold; tput setaf 6) \
+        LESS_TERMCAP_me=$(tput sgr0) \
+        LESS_TERMCAP_se=$(tput rmso; tput sgr0) \
+        LESS_TERMCAP_ue=$(tput rmul; tput sgr0) \
+        LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 4) \
+        LESS_TERMCAP_mr=$(tput rev) \
+        LESS_TERMCAP_mh=$(tput dim) \
+        LESS_TERMCAP_ZN=$(tput ssubm) \
+        LESS_TERMCAP_ZV=$(tput rsubm) \
+        LESS_TERMCAP_ZO=$(tput ssupm) \
+        LESS_TERMCAP_ZW=$(tput rsupm) \
+        man "$@"
+}
