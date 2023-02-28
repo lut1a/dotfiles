@@ -1,21 +1,22 @@
 set nocompatible
-syntax on
-if has("autocmd")
-    filetype plugin indent on
-endif
 packloadall
 set encoding=utf-8
 set number
 set relativenumber
+set autoread
+set modifiable
 "set wrap
-"set textwidth=80
+set whichwrap=s,b
+set textwidth=72
 set formatoptions=tcqrn1
 set showmatch
 set errorbells
 set visualbell
+set belloff=esc
+set nostartofline
+set hidden
 set hlsearch
 set smartcase
-set ignorecase
 set incsearch
 set autoindent
 set cindent
@@ -29,6 +30,16 @@ set backspace=indent,eol,start
 set laststatus=2
 set showmode
 set showcmd
+set wildmenu
+set wildmode=list:longest,full
+set spelllang=en,fr
+set spellsuggest=10
+set formatoptions-=t formatoptions-=o formatoptions+=crqjnl1
+filetype plugin on
+filetype indent off
+set listchars=tab:›\ ,nbsp:␣,trail:•,precedes:«,extends:»
+""""set listchars=tab:›\ ,space:·,nbsp:␣,trail:•,eol:¬,precedes:«,extends:»
+
 
 {{- if eq .computerType "personal" }} 
 set clipboard=unnamedplus
@@ -38,5 +49,5 @@ nnoremap "*p :let @"=substitute(system("wl-paste --no-newline --primary"), '<C-v
 {{- end }}
 
 set omnifunc=syntaxcomplete#Complete
-
+syntax enable
 colorscheme modus_operandi
