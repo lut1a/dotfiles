@@ -2,16 +2,31 @@
 # ~/.bashrc
 #
 
+if [ -n "$SSH_CONNECTION" ]
+then
+    export PS1="\u@\h: \w \$ "
+else
+    export PS1="\w \$ "
+fi
+export PS2="> "
+if ! shopt -oq posix
+then
+    if [ -f /usr/share/bash-completion/bash_completion ]
+    then
+        . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]
+    then
+        . /etc/bash_completion
+    fi
+fi
+[ "$PS1" ] && complete -cf sudo
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-PS1='[\u@\h \W]\$ '
 source <(gopass completion bash)
 source $HOME/.zsh/4aliases.zsh
 export EDITOR={{ .userEditor }}
 export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 export PAGER={{ .pager }}
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
