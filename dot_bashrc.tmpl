@@ -73,7 +73,10 @@ then
     dircolors_data='"$HOME"/.dircolors'
     test -r "$dircolors_data" && eval "$(dircolors -b "$dircolors_data")" || eval "$(dircolors -b)"
 fi
-source <(gopass completion bash)
+if _checkexec gopass
+then
+    source <(gopass completion bash)
+fi
 source "$HOME"/.bash/aliases.sh
 export EDITOR={{ .userEditor }}
 export GIT_EDITOR=$EDITOR
