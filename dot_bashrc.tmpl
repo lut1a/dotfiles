@@ -23,9 +23,9 @@ then
 fi
 if [ -n "$SSH_CONNECTION" ]
 then
-    export PS1="\u@\h: \w \$ "
+    export PS1="\u@\h: \w \$ \n>"
 else
-    export PS1="\w \$ "
+    export PS1="\w \$ \n> "
 fi
 export PS2="> "
 if ! shopt -oq posix
