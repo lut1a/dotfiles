@@ -16,3 +16,9 @@
     exact = true
     stripComponents = 1
     refreshPeriod = "168h"
+[".vim/pack/lutia/start/vimgo"]
+    type = "archive"
+    url = "https://github.com/fatih/vim-go/archive/refs/heads/master.zip"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
