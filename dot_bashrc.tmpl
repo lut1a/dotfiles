@@ -12,12 +12,12 @@ _append_path () {
             ;;
         *)
             PATH="${PATH:+$PATH:}$1"
-    esac
+    ;; esac
 }
 
 if [ -f "$HOME"/.Xdefaults ]
 then
-    if [ "$SSH_CONNECTION" != "" ]
+    if [ "$SSH_CONNECTION" = "" ]
     then
         xrdb -merge "$HOME"/.Xdefaults
     fi
