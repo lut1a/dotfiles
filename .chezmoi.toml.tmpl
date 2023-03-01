@@ -9,6 +9,7 @@
 
 {{- $bkpdrv := promptStringOnce . "none" "Main backup drive label" -}}
 
+[comment]
 [data]
     email = {{ $email | quote }}
     computerType = {{ $computerType | quote }}
