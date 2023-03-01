@@ -60,7 +60,7 @@ fi
 if _checkexec dircolors
 then
     dircolors_data="$HOME/.dircolors"
-    test -r $dircolors_data && eval "$(dircolors -b ${dircolors_data})" || eval "$(dircolors -b)"
+    test -r "$dircolors_data" && eval "$(dircolors -b ${dircolors_data})" || eval "$(dircolors -b)"
 fi
 source <(gopass completion bash)
 source "$HOME"/.bash/aliases.sh
