@@ -4,4 +4,6 @@ set visible-stats On
 set mark-symlinked-directories On
 set colored-completion-prefix On
 set menu-complete-display-prefix On
-
+Tab: menu-complete
+"\e[Z": menu-complete-backward
+set show-all-if-unmodified on
