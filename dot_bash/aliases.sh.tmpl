@@ -1,3 +1,4 @@
+# vi: ft=sh
 alias docker='podman'
 {{- if eq .chezmoi.osRelease.name "Arch Linux" }}
 alias pkgupd="systemd-run --scope --user tmux new -s upgrade 'sudo pacman -Syu ; exec bash'"
