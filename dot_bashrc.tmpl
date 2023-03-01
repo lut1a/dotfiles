@@ -21,6 +21,12 @@ if [ -d /usr/local/go/bin ]
 then
     PATH=$PATH:/usr/local/go/bin
 fi
+
+if [ -f "$HOME"/.bash/git-prompt.sh ]
+then
+    source "$HOME"/.bash/git-prompt.sh
+fi
+
 if [ -n "$SSH_CONNECTION" ]
 then
     export PS1="\u@\h: \w \$ \n>"
