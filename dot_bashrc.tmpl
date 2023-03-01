@@ -30,9 +30,9 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 
 if [ -n "$SSH_CONNECTION" ]
 then
-    export PS1="\u@\h: \w \$ \n>"
+    export PS1='\u@\h: \w \$ \n>'
 else
-    export PS1="\w \$ \n> "
+    export PS1='\w \$ \n> '
 fi
 export PS2="> "
 if ! shopt -oq posix
