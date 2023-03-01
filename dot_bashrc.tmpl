@@ -7,6 +7,11 @@ _checkexec ()
     command -v "$1" > /dev/null
 }
 
+if [ -f "$HOME"/.Xdefaults ]
+then
+xrdb -merge "$HOME"/.Xdefaults
+fi
+
 if [ -d "$HOME"/bin ]
 then
     PATH=$PATH:"$HOME"/bin
