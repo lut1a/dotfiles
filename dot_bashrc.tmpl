@@ -33,7 +33,7 @@ then
     GIT_PS1_SHOWDIRTYSTATE=1
 fi
 
-if [ -n "$SSH_CONNECTION" ]
+if [ "$SSH_CONNECTION" != "" ]
 then
     PS1='\u@\h: \w \$ \n>'
 elif [ -f "$HOME"/.bash/git-prompt.sh ]
@@ -60,7 +60,7 @@ fi
 if _checkexec dircolors
 then
     dircolors_data='"$HOME"/.dircolors'
-    test -r "$dircolors_data" && eval "$(dircolors -b ${dircolors_data})" || eval "$(dircolors -b)"
+    test -r "$dircolors_data" && eval "$(dircolors -b "$dircolors_data")" || eval "$(dircolors -b)"
 fi
 source <(gopass completion bash)
 source "$HOME"/.bash/aliases.sh
