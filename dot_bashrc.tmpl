@@ -75,7 +75,9 @@ fi
 if _checkexec gopass; then
 	. <(gopass completion bash)
 fi
+
 . "$HOME"/.bash/aliases.sh
+
 export EDITOR=vim
 export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
