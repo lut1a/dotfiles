@@ -1,5 +1,0 @@
-[terminal]
-userShell = "zsh"
-userTerminal = "kitty"
-fontSize = "18.0"
-fontFamily = "JetBrains Mono"

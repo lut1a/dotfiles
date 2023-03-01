@@ -9,6 +9,8 @@
 
 {{- $bkpdrv := promptStringOnce . "none" "Main backup drive label" -}}
 
+{{- $termFontSize := promptStringOnce . "18" "Your terminal font size" -}}
+
 [comment]
 [data]
     email = {{ $email | quote }}
@@ -16,6 +18,7 @@
     pager = {{ $pager | quote }}
     userEditor = {{ $userEditor | quote }}
     bkpdrv = {{ $bkpdrv | quote }} 
+    termFontSize = {{ $termFontSize | quote }}
 
 encryption = "gpg"
 [gpg]
