@@ -2,11 +2,11 @@
 
 {{ $email := promptStringOnce . "email" "Email address" -}}
 
-{{- $computerType := promptStringOnce . "personal" "Type of computer used" -}}
+{{- $computerType := promptStringOnce . "computerType" "Type of computer used" -}}
 
-{{- $bkpdrv := promptStringOnce . "none" "Main backup drive label" -}}
+{{- $bkpdrv := promptStringOnce . "bkpdrv" "Main backup drive label" -}}
 
-{{- $termFontSize := promptStringOnce . "18" "Your terminal font size" -}}
+{{- $termFontSize := promptStringOnce . "termFontSize" "Your terminal font size" -}}
 
 [data]
     email = {{ $email | quote }}
