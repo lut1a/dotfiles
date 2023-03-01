@@ -2,9 +2,6 @@
 # ~/.bashrc
 #
 
-_checkexec() {
-	command -v "$1" >/dev/null
-}
 _append_path() {
 	case ":$PATH:" in
 	*:"$1":*) ;;
@@ -13,12 +10,6 @@ _append_path() {
 		;;
 	esac
 }
-
-if [ -f "$HOME"/.Xdefaults ]; then
-	if [ "$SSH_CONNECTION" = "" ]; then
-		xrdb -merge "$HOME"/.Xdefaults
-	fi
-fi
 
 if [ -d "$HOME"/bin ]; then
 	_append_path "$HOME"'/bin'
@@ -32,10 +23,19 @@ if [ -d /usr/local/go/bin ]; then
 	_append_path '/usr/local/go/bin'
 fi
 
+case $- in
+*i*) ;;
+*) return ;;
+esac
+
 if [ -f "$HOME"/.bash/git-prompt.sh ]; then
-	source "$HOME"/.bash/git-prompt.sh
+	. "$HOME"/.bash/git-prompt.sh
 	GIT_PS1_SHOWDIRTYSTATE=1
 fi
+
+_checkexec() {
+	command -v "$1" >/dev/null
+}
 
 if [ "$SSH_CONNECTION" != "" ]; then
 	PS1='\u@\h: \w \$ \n>'
@@ -53,19 +53,23 @@ if ! shopt -oq posix; then
 	fi
 fi
 [ "$PS1" ] && complete -cf sudo
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
 
 if _checkexec dircolors; then
 	dircolors_data='"$HOME"/.dircolors'
 	test -r "$dircolors_data" && eval "$(dircolors -b "$dircolors_data")" || eval "$(dircolors -b)"
 fi
 if _checkexec gopass; then
-	source <(gopass completion bash)
+	. <(gopass completion bash)
 fi
-source "$HOME"/.bash/aliases.sh
+. "$HOME"/.bash/aliases.sh
 export EDITOR={{ .userEditor }}
 export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 export PAGER={{ .pager }}
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+if [ -f "$HOME"/.Xdefaults ]; then
+	if [ "$SSH_CONNECTION" = "" ]; then
+		xrdb -merge "$HOME"/.Xdefaults
+	fi
+fi
