@@ -48,6 +48,25 @@ nnoremap "+p :let @"=substitute(system("wl-paste --no-newline"), '<C-v><C-m>', '
 nnoremap "*p :let @"=substitute(system("wl-paste --no-newline --primary"), '<C-v><C-m>', '', 'g')<cr>p
 {{- end }}
 
+" Mimic Emacs Line Editing in Insert Mode Only
+inoremap <C-A> <Home>
+inoremap <C-B> <Left>
+inoremap <C-E> <End>
+inoremap <C-F> <Right>
+" â is <Alt-B>
+inoremap â <C-Left>
+" æ is <Alt-F>
+inoremap æ <C-Right>
+inoremap <C-K> <Esc>lDa
+inoremap <C-U> <Esc>d0xi
+inoremap <C-Y> <Esc>Pa
+inoremap <C-X><C-S> <Esc>:w<CR>a
+inoremap <A-x> <Esc>:
+inoremap <A-f> <Esc>lwi
+inoremap <A-b> <Esc>bi
+inoremap <A-S-f> <Esc>lWi
+inoremap <A-S-b> <Esc>Bi
+
 set omnifunc=syntaxcomplete#Complete
 syntax enable
 colorscheme modus_operandi
