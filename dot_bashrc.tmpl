@@ -1,6 +1,4 @@
-#
 # ~/.bashrc
-#
 # vi: ft=sh
 # shell benchmark
 # * for interactive login shell: `time bash --login -i -c true`
@@ -81,4 +79,6 @@ fi
 export EDITOR=vim
 export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+{{- if eq .computerType "personal" }}
+export SSH_AUTH_SOCK='$XDG_RUNTIME_DIR/ssh-agent.socket'
+{{- end }}

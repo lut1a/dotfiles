@@ -17,3 +17,11 @@
 encryption = "gpg"
 [gpg]
     recipient = {{ $email | quote }}
+
+[diff]
+    command = "vim"
+    args = ["-d", "{{`{{ .Destination }}`}}", "{{`{{ .Target }}`}}"]
+
+[merge]
+    command = "vim"
+    args = ["-d", "{{`{{ .Destination }}`}}", "{{`{{ .Source }}", "{{ .Target }}`}}"]
