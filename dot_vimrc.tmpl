@@ -12,13 +12,16 @@ set number
 set relativenumber
 set modifiable
 "set wrap
-set whichwrap=s,b
-set textwidth=72
+set textwidth=80
 set formatoptions=tcqrn1
 set showmatch
+"set cursorline
 set errorbells
 set visualbell
 set belloff=esc
+set diffopt+=iwhite
+set whichwrap=bs<>[]
+set showbreak=>\ \ \ 
 set nostartofline
 set hidden
 set hlsearch
@@ -29,6 +32,7 @@ set tabstop=4
 set title
 set showcmd
 set ruler
+set ttyfast
 set undolevels=1000
 set backspace=indent,eol,start
 set laststatus=2
@@ -69,6 +73,6 @@ inoremap <A-b> <Esc>bi
 inoremap <A-S-f> <Esc>lWi
 inoremap <A-S-b> <Esc>Bi
 
-set omnifunc=syntaxcomplete#Complete
+set ofu=syntaxcomplete#Complete
 syntax enable
 colorscheme modus_operandi
