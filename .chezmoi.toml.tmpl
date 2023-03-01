@@ -1,22 +1,16 @@
 # vi: ft=toml
-{{- $email := promptStringOnce . "email" "Email address" -}}
+
+{{ $email := promptStringOnce . "email" "Email address" -}}
 
 {{- $computerType := promptStringOnce . "personal" "Type of computer used" -}}
-
-{{- $pager := promptStringOnce . "less" "Configured pager" -}}
-
-{{- $userEditor := promptStringOnce . "vim" "Configured editor" -}}
 
 {{- $bkpdrv := promptStringOnce . "none" "Main backup drive label" -}}
 
 {{- $termFontSize := promptStringOnce . "18" "Your terminal font size" -}}
 
-[comment]
 [data]
     email = {{ $email | quote }}
     computerType = {{ $computerType | quote }}
-    pager = {{ $pager | quote }}
-    userEditor = {{ $userEditor | quote }}
     bkpdrv = {{ $bkpdrv | quote }} 
     termFontSize = {{ $termFontSize | quote }}
 

@@ -78,8 +78,7 @@ if _checkexec gopass; then
 	. <(gopass completion bash)
 fi
 . "$HOME"/.bash/aliases.sh
-export EDITOR={{ .userEditor }}
+export EDITOR=vim
 export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
-export PAGER={{ .pager }}
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
