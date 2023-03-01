@@ -1,10 +1,5 @@
 alias docker='podman'
-{{- if eq .chezmoi.osRelease.name "Arch Linux" }}
 alias pkgupd="systemd-run --scope --user tmux new -s upgrade 'sudo pacman -Syu ; exec zsh'"
-{{- end }}
-{{- if eq .chezmoi.osRelease.name "Debian GNU/Linux" }}
-alias pkgupd="systemd-run --scope --user tmux new -s upgrade 'sudo apt update && sudo apt upgrade ; exec zsh'"
-{{- end }}
 alias tmuxc='tmux new -s'
 alias n='tmux new-window'
 alias a='tmux a'
