@@ -1,9 +1,15 @@
 set nocompatible
+set autoread
+autocmd! bufwritepost vimrc source ~/.imrc
+"autocmd! bufwritepost gvimrc source ~/.gvimrc
 packloadall
+set backupdir=~/.vim/backup
+set directory=~/.vim/backupf
+filetype plugin on
+filetype indent off
 set encoding=utf-8
 set number
 set relativenumber
-set autoread
 set modifiable
 "set wrap
 set whichwrap=s,b
@@ -18,12 +24,10 @@ set hidden
 set hlsearch
 set smartcase
 set incsearch
-set autoindent
-set cindent
-set shiftwidth=4
-set expandtab
-set noshiftround
-set softtabstop=4
+set expandtab softtabstop=4 shiftwidth=4
+set tabstop=4
+set title
+set showcmd
 set ruler
 set undolevels=1000
 set backspace=indent,eol,start
@@ -35,8 +39,6 @@ set wildmode=list:longest,full
 set spelllang=en,fr
 set spellsuggest=10
 set formatoptions-=t formatoptions-=o formatoptions+=crqjnl1
-filetype plugin on
-filetype indent off
 set listchars=tab:›\ ,nbsp:␣,trail:•,precedes:«,extends:»
 """"set listchars=tab:›\ ,space:·,nbsp:␣,trail:•,eol:¬,precedes:«,extends:»
 
