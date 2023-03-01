@@ -6,6 +6,14 @@ _checkexec ()
 {
     command -v "$1" > /dev/null
 }
+_append_path () {
+    case ":$PATH:" in
+        *:"$1":*)
+            ;;
+        *)
+            PATH="${PATH:+$PATH:}$1"
+    esac
+}
 
 if [ -f "$HOME"/.Xdefaults ]
 then
@@ -14,17 +22,17 @@ fi
 
 if [ -d "$HOME"/bin ]
 then
-    PATH=$PATH:"$HOME"/bin
+    _append_path '"$HOME"/bin'
 fi
 
 if [ -d "$HOME"/go/bin ]
 then
-    PATH=$PATH:"$HOME"/go/bin
+    _append_path '"$HOME"/go/bin'
 fi
 
 if [ -d /usr/local/go/bin ]
 then
-    PATH=$PATH:/usr/local/go/bin
+    _append_path '/usr/local/go/bin'
 fi
 
 if [ -f "$HOME"/.bash/git-prompt.sh ]
