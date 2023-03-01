@@ -63,11 +63,9 @@ then
     test -r $dircolors_data && eval "$(dircolors -b ${dircolors_data})" || eval "$(dircolors -b)"
 fi
 source <(gopass completion bash)
-source $HOME/.bash/aliases.sh
+source "$HOME"/.bash/aliases.sh
 export EDITOR={{ .userEditor }}
 export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 export PAGER={{ .pager }}
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-PATH=$HOME/bin:/usr/local/go/bin:$HOME/go/bin:$PATH
-export PATH
