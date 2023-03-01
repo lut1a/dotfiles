@@ -26,6 +26,7 @@ if [ -f "$HOME"/.bash/git-prompt.sh ]
 then
     source "$HOME"/.bash/git-prompt.sh
 fi
+export GIT_PS1_SHOWDIRTYSTATE=1
 
 if [ -n "$SSH_CONNECTION" ]
 then
