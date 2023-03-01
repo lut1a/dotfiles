@@ -62,11 +62,11 @@ fi
 
 if _checkexec dircolors; then
 	test -r "$dircolors_data" && eval "$(dircolors -b "$dircolors_data")" || eval "$(dircolors -b)"
-        alias ls='ls -pvh --color=auto --group-directories-first'
-        alias grep='grep --color=auto'
-        alias egrep='grep -E --color=auto'
-        alias fgrep='grep -F --color=auto'
-        alias diff='diff --color=auto'
+	alias ls='ls -pvh --color=auto --group-directories-first'
+	alias grep='grep --color=auto'
+	alias egrep='grep -E --color=auto'
+	alias fgrep='grep -F --color=auto'
+	alias diff='diff --color=auto'
 fi
 
 if _checkexec gopass; then
@@ -78,5 +78,3 @@ export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
 export PAGER={{ .pager }}
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
-
-
