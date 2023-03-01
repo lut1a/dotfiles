@@ -23,6 +23,12 @@ if [ -d /usr/local/go/bin ]; then
 	_append_path '/usr/local/go/bin'
 fi
 
+if [ -f "$HOME"/.Xdefaults ]; then
+	if [ "$SSH_CONNECTION" = "" ]; then
+		xrdb -merge "$HOME"/.Xdefaults
+	fi
+fi
+
 case $- in
 *i*) ;;
 *) return ;;
@@ -55,9 +61,14 @@ fi
 [ "$PS1" ] && complete -cf sudo
 
 if _checkexec dircolors; then
-	dircolors_data='"$HOME"/.dircolors'
 	test -r "$dircolors_data" && eval "$(dircolors -b "$dircolors_data")" || eval "$(dircolors -b)"
+        alias ls='ls -pvh --color=auto --group-directories-first'
+        alias grep='grep --color=auto'
+        alias egrep='grep -E --color=auto'
+        alias fgrep='grep -F --color=auto'
+        alias diff='diff --color=auto'
 fi
+
 if _checkexec gopass; then
 	. <(gopass completion bash)
 fi
@@ -68,8 +79,4 @@ export VISUAL=$EDITOR
 export PAGER={{ .pager }}
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
-if [ -f "$HOME"/.Xdefaults ]; then
-	if [ "$SSH_CONNECTION" = "" ]; then
-		xrdb -merge "$HOME"/.Xdefaults
-	fi
-fi
+
