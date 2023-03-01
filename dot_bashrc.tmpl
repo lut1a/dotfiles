@@ -48,7 +48,7 @@ then
     test -r $dircolors_data && eval "$(dircolors -b ${dircolors_data})" || eval "$(dircolors -b)"
 fi
 source <(gopass completion bash)
-source $HOME/.zsh/4aliases.zsh
+source $HOME/.bash/aliases.sh
 export EDITOR={{ .userEditor }}
 export GIT_EDITOR=$EDITOR
 export VISUAL=$EDITOR
