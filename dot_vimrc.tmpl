@@ -5,7 +5,6 @@ packloadall
 set encoding=utf-8
 set number
 set relativenumber
-"set wrap
 set textwidth=72
 set colorcolumn=80
 set formatoptions=tcqrn1
@@ -34,20 +33,12 @@ set titlestring=VIM:\ %-25.55F\ %a%r%m titlelen=70
 set showcmd
 set ruler
 set ttyfast
-set undolevels=1000
 set backspace=indent,eol,start
 set laststatus=2
 set showmode
 set showcmd
-set wildignorecase
-set wildmenu
-set wildmode=list:longest,full
-set spelllang=en,fr
-set spellsuggest=10
-set formatoptions-=t formatoptions-=o formatoptions+=crqjnl1
-set listchars=tab:›\ ,nbsp:␣,trail:•,precedes:«,extends:»
-""""set listchars=tab:›\ ,space:·,nbsp:␣,trail:•,eol:¬,precedes:«,extends:»
-
+"set spelllang=en,fr
+"set spellsuggest=10
 
 {{- if eq .computerType "personal" }} 
 set backupdir=~/.vim/backup
