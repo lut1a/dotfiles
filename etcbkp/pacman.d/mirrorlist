@@ -16,3 +16,4 @@ Server = rsync://mirror.theo546.fr/archlinux/$repo/os/$arch
 Server = rsync://srv.labhouse.fr/arch/$repo/os/$arch
 Server = rsync://mirror.sysa.tech/archlinux/$repo/os/$arch
 Server = http://mirrors.gandi.net/archlinux/$repo/os/$arch
+Server = http://archlinux.mirrors.ovh.net/archlinux/$repo/os/$arch
