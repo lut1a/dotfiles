@@ -60,3 +60,6 @@ man ()
         LESS_TERMCAP_ZW=$(tput rsupm) \
         man "$@"
 }
+
+alias installgodoc='go install golang.org/x/tools/cmd/godoc@latest'
+alias godoc='\godoc -http=:6060'
