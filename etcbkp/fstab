@@ -1,0 +1,7 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+UUID="C0B6-3238"                             /efi             vfat    noatime,noauto,x-systemd.automount,x-systemd.idle-timeout=30  0 2
+UUID=5074e5aa-6668-4d46-b757-ad95cac1b96e    /                ext4    noatime    0 1
+UUID=b2ab877c-3334-48b7-9d00-58f167e35532    /mnt/t5intbkp    ext4    noatime,noauto,x-systemd.automount,x-systemd.idle-timeout=30,x-systemd.device-timeout=5,x-systemd.mount-timeout=5    0 2
