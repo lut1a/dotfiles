@@ -1,15 +1,10 @@
 " vi: ft=vim
 set nocompatible
 set autoread
-autocmd! bufwritepost vimrc source ~/.imrc
-"autocmd! bufwritepost gvimrc source ~/.gvimrc
 packloadall
-set backupdir=~/.vim/backup
-set directory=~/.vim/backupf
 set encoding=utf-8
 set number
 set relativenumber
-set modifiable
 "set wrap
 set textwidth=72
 set colorcolumn=80
@@ -28,7 +23,6 @@ set hlsearch
 set smartcase
 set incsearch
 set ignorecase
-set gdefault
 set expandtab softtabstop=4 shiftwidth=4
 set copyindent
 set smarttab
@@ -36,6 +30,7 @@ set autoindent
 set smartindent
 set tabstop=4
 set title
+set titlestring=VIM:\ %-25.55F\ %a%r%m titlelen=70
 set showcmd
 set ruler
 set ttyfast
@@ -55,6 +50,8 @@ set listchars=tab:›\ ,nbsp:␣,trail:•,precedes:«,extends:»
 
 
 {{- if eq .computerType "personal" }} 
+set backupdir=~/.vim/backup
+set directory=~/.vim/backupf
 set clipboard=unnamedplus
 xnoremap "+y y:call system("wl-copy", @")<cr>
 nnoremap "+p :let @"=substitute(system("wl-paste --no-newline"), '<C-v><C-m>', '', 'g')<cr>p
@@ -83,9 +80,6 @@ inoremap <A-S-b> <Esc>Bi
 set ofu=syntaxcomplete#Complete
 syntax enable
 colorscheme modus_operandi
-
-set gcr=n:blinkon0
-set guioptions-=m
 
 filetype plugin indent on
 au BufNewFile,BufRead *.json set ft=json syntax=javascript
