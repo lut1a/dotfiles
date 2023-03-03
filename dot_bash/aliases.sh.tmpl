@@ -1,10 +1,10 @@
 # vi: ft=sh
 alias docker='podman'
 {{- if eq .chezmoi.osRelease.name "Arch Linux" }}
-alias pkgupd="systemd-run --scope --user tmux new -s upgrade 'sudo pacman -Syu ; exec bash'"
+alias pkgupd='systemd-run --scope --user tmux new -s upgrade "sudo pacman -Syu ; exec bash"'
 {{- end }}
 {{- if eq .chezmoi.osRelease.name "Debian GNU/Linux" }}
-alias pkgupd="systemd-run --scope --user tmux new -s upgrade 'sudo apt update ; sudo apt upgrade ; exec bash'"
+alias pkgupd='systemd-run --scope --user tmux new -s upgrade "sudo apt update ; sudo apt upgrade ; exec bash"'
 {{- end  }}
 alias tmuxc='tmux new -s'
 alias n='tmux new-window'
@@ -18,6 +18,7 @@ alias gitc='git commit -m'
 alias gitp='git push -u origin main'
 alias gits='git status'
 alias cedu='bash -c "cd $(chezmoi source-path) ; git add -A ; git commit -m \"dotfiles update\" ; git push -u origin main"'
+alias cedit='chezmoi edit --apply'
 alias mkdir='mkdir -pv'
 alias xu='du -d1 -h | sort -h'
 alias xf='df -h'
@@ -29,7 +30,6 @@ alias pth='echo -e ${PATH//:/\\n}'
 alias now='date +"%T"'
 alias nowdate='date +"%d-%m-%Y"'
 alias wget='wget -c'
-alias cedit='chezmoi edit --apply'
 alias sscp='rsync --verbose --progress --partial'
 
 ######
