@@ -28,6 +28,10 @@ if ! shopt -oq posix; then
 fi
 [ "$PS1" ] && complete -cf sudo
 
+shopt -s extglob
+export HISTCONTROL=ignoreboth:erasedups
+shopt -s histappend
+
 if _checkexec gopass; then
 	. <(gopass completion bash)
 fi
