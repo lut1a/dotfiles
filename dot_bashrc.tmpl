@@ -3,51 +3,16 @@
 # shell benchmark
 # * for interactive login shell: `time bash --login -i -c true`
 # * for interactive shell: `time bash -i -c true`
+. "$HOME"/.shrc/shrc
 
-_append_path() {
-	case ":$PATH:" in
-	*:"$1":*) ;;
-	*)
-		PATH="${PATH:+$PATH:}$1"
-		;;
-	esac
-}
-
-if [ -d "$HOME"/bin ]; then
-	_append_path "$HOME"'/bin'
-fi
-
-if [ -d "$HOME"/go/bin ]; then
-	_append_path "$HOME"'/go/bin'
-fi
-
-if [ -d /usr/local/go/bin ]; then
-	_append_path '/usr/local/go/bin'
-fi
-
-if [ -f "$HOME"/.Xdefaults ]; then
-	if [ "$SSH_CONNECTION" = "" ]; then
-		xrdb -merge "$HOME"/.Xdefaults
-	fi
-fi
-
-case $- in
-*i*) ;;
-*) return ;;
-esac
-
-if [ -f "$HOME"/.bash/git-prompt.sh ]; then
-	. "$HOME"/.bash/git-prompt.sh
+if [ -f "$HOME"/.shrc/git-prompt.sh ]; then
+	. "$HOME"/.shrc/git-prompt.sh
 	GIT_PS1_SHOWDIRTYSTATE=1
 fi
 
-_checkexec() {
-	command -v "$1" >/dev/null
-}
-
 if [ "$SSH_CONNECTION" != "" ]; then
 	PS1='\u@\h: \w \$ \n> '
-elif [ -f "$HOME"/.bash/git-prompt.sh ]; then
+elif [ -f "$HOME"/.shrc/git-prompt.sh ]; then
 	PS1='\w \$$(__git_ps1 " (%s)") \n> '
 else
 	PS1='\w \$ \n> '
@@ -63,24 +28,6 @@ if ! shopt -oq posix; then
 fi
 [ "$PS1" ] && complete -cf sudo
 
-if _checkexec dircolors; then
-	test -r "$dircolors_data" && eval "$(dircolors -b "$dircolors_data")" || eval "$(dircolors -b)"
-	alias ls='ls -pvh --color=auto --group-directories-first'
-	alias grep='grep --color=auto'
-	alias egrep='grep -E --color=auto'
-	alias fgrep='grep -F --color=auto'
-	alias diff='diff --color=auto'
-fi
-
 if _checkexec gopass; then
 	. <(gopass completion bash)
 fi
-
-. "$HOME"/.bash/aliases.sh
-
-export EDITOR=vim
-export GIT_EDITOR=$EDITOR
-export VISUAL=$EDITOR
-{{- if eq .computerType "personal" }}
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/ssh-agent.socket
-{{- end }}

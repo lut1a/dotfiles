@@ -1,0 +1,56 @@
+# vi: ft=sh
+
+_append_path() {
+	case ":$PATH:" in
+	*:"$1":*) ;;
+	*)
+		PATH="${PATH:+$PATH:}$1"
+		;;
+	esac
+}
+
+if [ -d "$HOME"/bin ]; then
+	_append_path "$HOME"'/bin'
+fi
+
+if [ -d "$HOME"/go/bin ]; then
+	_append_path "$HOME"'/go/bin'
+fi
+
+if [ -d /usr/local/go/bin ]; then
+	_append_path '/usr/local/go/bin'
+fi
+
+if [ -f "$HOME"/.Xdefaults ]; then
+	if [ "$SSH_CONNECTION" = "" ]; then
+		xrdb -merge "$HOME"/.Xdefaults
+	fi
+fi
+
+case $- in
+*i*) ;;
+*) return ;;
+esac
+
+_checkexec() {
+	command -v "$1" >/dev/null
+}
+
+
+if _checkexec dircolors; then
+	test -r "$dircolors_data" && eval "$(dircolors -b "$dircolors_data")" || eval "$(dircolors -b)"
+	alias ls='ls -pvh --color=auto --group-directories-first'
+	alias grep='grep --color=auto'
+	alias egrep='grep -E --color=auto'
+	alias fgrep='grep -F --color=auto'
+	alias diff='diff --color=auto'
+fi
+
+. "$HOME"/.shrc/aliases.sh
+
+export EDITOR=vim
+export GIT_EDITOR=$EDITOR
+export VISUAL=$EDITOR
+{{- if eq .computerType "personal" }}
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/ssh-agent.socket
+{{- end }}
