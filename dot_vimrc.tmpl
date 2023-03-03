@@ -35,10 +35,15 @@ xnoremap "+y y:call system("wl-copy", @")<cr>
 nnoremap "+p :let @"=substitute(system("wl-paste --no-newline"), '<C-v><C-m>', '', 'g')<cr>p
 nnoremap "*p :let @"=substitute(system("wl-paste --no-newline --primary"), '<C-v><C-m>', '', 'g')<cr>p
 
+{{- if eq .chezmoi.os "linux" }}
+if has("gui_running")
+    set guioptions-=m  "menu bar
+    set guioptions-=T  "toolbar
+    set guioptions-=r  "scrollbar
+    set guifont=JetBrains\ Mono\ 12
+endif
+{{- end }}
 
-set guioptions-=m  "menu bar
-set guioptions-=T  "toolbar
-set guioptions-=r  "scrollbar
 {{- end }}
 
 set ofu=syntaxcomplete#Complete
