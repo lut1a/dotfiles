@@ -1,6 +1,20 @@
 " vim: ft=vim
 vim9script
-packloadall
+g:loaded_2html_plugin = 1
+g:loaded_getscriptPlugin = 1
+g:loaded_logipat = 1
+g:loaded_rrhelper = 1
+g:loaded_gzip = 1
+g:loaded_tarPlugin = 1 | g:loaded_tar = 1
+g:loaded_zipPlugin = 1 | g:loaded_zip = 1
+g:loaded_vimballPlugin = 1 | g:loaded_vimball = true
+g:loaded_netrwPlugin = 1 | g:loaded_netrw = true
+def Load_Plugins(t: number)
+    packloadall
+enddef
+augroup USER_CMDS | autocmd!
+    autocmd VimEnter * timer_start(20, function('Load_Plugins'))
+augroup END
 set nocompatible encoding=utf-8 number relativenumber textwidth=72
 \ colorcolumn=80 errorbells visualbell belloff=esc diffopt+=iwhite
 \ showbreak=>\ \ \ hlsearch tabstop=4 expandtab softtabstop=4 shiftwidth=4
