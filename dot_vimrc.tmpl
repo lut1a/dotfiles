@@ -1,28 +1,11 @@
-" vi: ft=vim
-set nocompatible
+" vim: ft=vim
+vim9script
 packloadall
-set encoding=utf-8
-set number
-set relativenumber
-set textwidth=72
-set colorcolumn=80
-set errorbells
-set visualbell
-set belloff=esc
-set diffopt+=iwhite
-set showbreak=>\ \ \ 
-set hlsearch
-set tabstop=4
-set expandtab softtabstop=4 shiftwidth=4
-set autoindent
-set title
-set titlestring=VIM:\ %-25.55F\ %a%r%m titlelen=70
-set ttyfast
-set showcmd
-set showmode
-set showcmd
-"set spelllang=en,fr
-"set spellsuggest=10
+set nocompatible encoding=utf-8 number relativenumber textwidth=72
+\ colorcolumn=80 errorbells visualbell belloff=esc diffopt+=iwhite
+\ showbreak=>\ \ \ hlsearch tabstop=4 expandtab softtabstop=4 shiftwidth=4
+\ autoindent title titlestring=VIM:\ %-25.55F\ %a%r%m titlelen=70 ttyfast
+\ showcmd showmode showcmd spelllang=en,fr spellsuggest=10
 
 {{- if eq .computerType "personal" }} 
 set backupdir=~/.vim/backup
@@ -34,19 +17,14 @@ nnoremap "*p :let @"=substitute(system("wl-paste --no-newline --primary"), '<C-v
 
 {{- if eq .chezmoi.os "linux" }}
 if has("gui_running")
-    set guioptions-=m  "menu bar
-    set guioptions-=T  "toolbar
-    set guioptions-=r  "scrollbar
-    set guifont=JetBrains\ Mono\ 12
-    set guiligatures=!\"#$%&()*+-./:<=>?@[]^_{\|~
+    set guioptions-=mTr guifont=JetBrains\ Mono\ 12 guiligatures=!\"#$%&()*+-./:<=>?@[]^_{\|~
 endif
 {{- end }}
 
 {{- end }}
 
 set ofu=syntaxcomplete#Complete
-syntax enable
 colorscheme modus_operandi
 
-filetype plugin indent on
+filetype plugin indent on | syntax enable syntax on
 au BufNewFile,BufRead *.json set ft=json syntax=javascript
