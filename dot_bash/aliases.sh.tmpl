@@ -4,7 +4,7 @@ alias docker='podman'
 alias pkgupd="systemd-run --scope --user tmux new -s upgrade 'sudo pacman -Syu ; exec bash'"
 {{- end }}
 {{- if eq .chezmoi.osRelease.name "Debian GNU/Linux" }}
-alias pkgupd="systemd-run --scope --user tmux new -s upgrade 'sudo apt update && sudo apt upgrade ; exec bash'"
+alias pkgupd="systemd-run --scope --user tmux new -s upgrade 'sudo apt update ; sudo apt upgrade ; exec bash'"
 {{- end  }}
 alias tmuxc='tmux new -s'
 alias n='tmux new-window'
@@ -17,7 +17,7 @@ alias gita='git add -A'
 alias gitc='git commit -m'
 alias gitp='git push -u origin main'
 alias gits='git status'
-alias gitn='cd ~/.local/share/chezmoi && gita && gitc "dotfiles update" && gitp'
+alias cedu='chezmoi cd && gita && gitc "dotfiles update" && gitp'
 alias mkdir='mkdir -pv'
 alias xu='du -d1 -h | sort -h'
 alias xf='df -h'
