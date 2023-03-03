@@ -52,7 +52,7 @@ elif [ -f "$HOME"/.bash/git-prompt.sh ]; then
 else
 	PS1='\w \$ \n> '
 fi
-PS2="> "
+PS2='> '
 
 if ! shopt -oq posix; then
 	if [ -f /usr/share/bash-completion/bash_completion ]; then
