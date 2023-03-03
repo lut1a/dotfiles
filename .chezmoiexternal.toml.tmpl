@@ -1,4 +1,10 @@
 {{- if eq .computerType "personal" }}
+[".vim/pack/sheerun/start/vimpolyglot"]
+    type = "archive"
+    url =  "https://github.com/sheerun/vim-polyglot/archive/refs/heads/master.zip"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
 [".vim/pack/dhruvasagar/start/vimtablemode"]
     type = "archive"
     url = "https://github.com/dhruvasagar/vim-table-mode/archive/refs/heads/master.zip"
