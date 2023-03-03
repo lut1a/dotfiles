@@ -1,0 +1,9 @@
+MOZ_ENABLE_WAYLAND=1
+MOZ_USE_XINPUT2=1
+export HISTSIZE=1500
+export EDITOR=vim
+export GIT_EDITOR=vim
+export VISUAL=vim
+{{- if eq .computerType "personal" }}
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/ssh-agent.socket
+{{- end }}
