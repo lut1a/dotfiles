@@ -29,6 +29,7 @@ fi
 [ "$PS1" ] && complete -cf sudo
 
 shopt -s extglob
+shopt -s checkwinsize
 export HISTCONTROL=ignoreboth:erasedups
 shopt -s histappend
 
