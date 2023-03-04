@@ -18,11 +18,11 @@ _RED="\001$(tput setaf 1)\002"
 _RESET="\001$(tput sgr0)\002"
 _BOLD="\001$(tput bold)\002"
 if [ "$SSH_CONNECTION" != "" ]; then
-	PS1="$\e[1m{_BLUE}\u@\h: \w \$${_RESET} \n> "
+	PS1="$\e[1m${_BLUE}\u@\h: \w \$${_RESET} \n> "
 elif [ -f "$HOME"/.shrc/git-prompt.sh ]; then
 	PROMPT_COMMAND='__git_ps1 "\e[1m"${_BLUE}"\w \\\$" ${_RESET}"\n> "'
 else
-	PS1="$\e[1m{_BLUE}\w \$${_RESET} \n> "
+	PS1="$\e[1m${_BLUE}\w \$${_RESET} \n> "
 fi
 PS2='> '
 
