@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 comm -23 <(pacman -Qneq | sort) <(pacman -Qqg -g gnome | sort | uniq) |
-	grep -v 'radeon\|nvidia\|intel\|amd\|linux\|qt5' |
+	grep -v 'radeon\|nvidia\|intel\|amd\|linux\|qt5\|gnome' |
 	tr '\n' ' ' >"$HOME"/bin/manuallyinstalledpkgs.txt
 
 pacman -Qmeq | tr '\n' ' ' >"$HOME"/bin/aurpackages.txt
