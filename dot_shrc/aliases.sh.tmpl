@@ -45,7 +45,8 @@ alias la='ls -A'
 alias h='history'
 alias j='jobs -l'
 alias bc='bc -l'
-
+alias installgodoc='go install golang.org/x/tools/cmd/godoc@latest'
+alias godoc='\godoc -http=:6060'
 
 man ()
 {
@@ -65,5 +66,7 @@ man ()
         man "$@"
 }
 
-alias installgodoc='go install golang.org/x/tools/cmd/godoc@latest'
-alias godoc='\godoc -http=:6060'
+selcol ()
+{
+    awk '{print $1}'
+}
