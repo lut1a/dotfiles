@@ -42,12 +42,12 @@ if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
   &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 set ofu=syntaxcomplete#Complete
-#set termguicolors
-#colorscheme modus_operandi
+set termguicolors
+colorscheme modus_operandi
 
-colorscheme default
-set notermguicolors
-highlight Search ctermfg=0
+# colorscheme default
+# set notermguicolors
+# highlight Search ctermfg=0
 
 
 filetype plugin indent on | syntax enable syntax on
