@@ -6,7 +6,7 @@ alias pkgupd='systemd-run --scope --user tmux new -s upgrade "sudo pacman -Syu ;
 {{- if eq .chezmoi.osRelease.name "Debian GNU/Linux" }}
 alias pkgupd='systemd-run --scope --user tmux new -s upgrade "sudo apt update ; sudo apt upgrade ; exec bash"'
 {{- end  }}
-alias vim='vis'
+alias vim='nvim'
 alias tmuxc='tmux new -s'
 alias n='tmux new-window'
 alias a='tmux a'
