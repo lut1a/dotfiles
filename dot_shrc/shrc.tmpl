@@ -30,15 +30,15 @@ fi
 
 # systemctl --user import-environment PATH
 
-case $- in
-*i*) ;;
-*) return ;;
-esac
-
 _checkexec() {
 	command -v "$1" >/dev/null
 }
 
+
+case $- in
+*i*) ;;
+*) return ;;
+esac
 
 if _checkexec dircolors; then
 	test -r "$dircolors_data" && eval "$(dircolors -b "$dircolors_data")" || eval "$(dircolors -b)"
