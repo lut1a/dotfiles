@@ -1,5 +1,5 @@
 ! modus-operandi 
-URxvt.font: xft:JetBrains Mono:size=14
+URxvt.font: xft:JetBrains Mono:size=12
 URxvt.background: #ffffff
 URxvt.foreground: #000000
 URxvt.color0:     #000000
