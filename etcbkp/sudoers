@@ -1,6 +1,0 @@
-Cmnd_Alias PACMAN = /usr/bin/pacman -Syu
-Defaults env_reset
-root ALL=(ALL:ALL) ALL
-%wheel ALL=(ALL:ALL) ALL
-%wheel ALL=(ALL:ALL) NOPASSWD: PACMAN
-#includedir /etc/sudoers.d

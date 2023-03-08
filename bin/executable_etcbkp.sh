@@ -1,4 +1,15 @@
 #!/usr/bin/env bash
+mkdir -pv "$HOME"/etcbkp/pacman.d/hooks/
+mkdir -pv "$HOME"/etcbkp/systemd/system/
+mkdir -pv "$HOME"/etcbkp/systemd/journald.conf.d/
+mkdir -pv "$HOME"/etcbkp/systemd/resolved.conf.d/
+mkdir -pv "$HOME"/etcbkp/systemd/system.conf.d/
+mkdir -pv "$HOME"/etcbkp/udev/rules.d/
+mkdir -pv "$HOME"/etcbkp/NetworkManager/conf.d/
+mkdir -pv "$HOME"/etcbkp/iwd/
+mkdir -pv "$HOME"/etcbkp/kernel/
+mkdir -pv "$HOME"/etcbkp/mkinitcpio.d/
+mkdir -pv "$HOME"/etcbkp/modprobe.d/
 
 cp /etc/locale.conf "$HOME"/etcbkp/locale.conf
 cp /etc/locale.gen "$HOME"/etcbkp/locale.gen
@@ -18,6 +29,6 @@ cp /etc/iwd/main.conf "$HOME"/etcbkp/iwd/main.conf
 cp /etc/kernel/cmdline "$HOME"/etcbkp/kernel/cmdline
 cp /etc/mkinitcpio.conf "$HOME"/etcbkp/mkinitcpio.conf
 cp /etc/mkinitcpio.d/* "$HOME"/etcbkp/mkinitcpio.d/
-cp /etc/pacman.d/hooks/95-systemd-boot.hook "$HOME"/etcbkp/pacman.d/hooks/95-systemd-boot.hook
-
 cp /etc/modprobe.d/nouveau_blacklist.conf "$HOME"/etcbkp/modprobe.d/nouveau_blacklist.conf
+
+chezmoi add "$HOME"/etcbkp/
