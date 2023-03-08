@@ -16,7 +16,7 @@ require("lazy").setup({
 vim.opt.encoding="utf-8"
 vim.g.mapleader = ","
 HOME = os.getenv('HOME')
-vim.opt.backupdir = HOME .. "/.config/nvim/backup"
+vim.opt.backupdir = HOME .. "/.local/share/nvim/backup"
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.ignorecase = true
