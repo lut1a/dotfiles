@@ -19,10 +19,10 @@ main() {
 	aqua='#3e999f'
 
 	# Icons
-	# left_sep=''
-	# right_sep=''
-    left_sep='|'
-    right_sep='|'
+	left_sep=''
+	right_sep=''
+        # left_sep='|'
+        # right_sep='|'
 
 	tmux set-option -g status on
 	tmux set-option -g status-left-length 100
