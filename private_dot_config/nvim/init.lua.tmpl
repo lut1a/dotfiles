@@ -14,6 +14,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   "Mofiqul/vscode.nvim",
+{{- if eq .computerType "personal" }}
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
   'tpope/vim-sleuth',
@@ -80,14 +81,16 @@ require('lazy').setup({
       pcall(require('nvim-treesitter.install').update { with_sync = true })
     end,
   },
+{{- end }} 
   -- require 'kickstart.plugins.autoformat',
   --{ import = 'custom.plugins' },
 }, {})
+vim.o.completeopt = 'menuone,noselect'
+{{- if eq .computerType "personal" }}
 vim.o.clipboard = 'unnamedplus'
 vim.o.updatetime = 250
 vim.o.timeout = true
 vim.o.timeoutlen = 300
-vim.o.completeopt = 'menuone,noselect'
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
@@ -286,6 +289,7 @@ cmp.setup {
     { name = 'luasnip' },
   },
 }
+{{- end }}
 vim.opt.encoding="utf-8"
 HOME = os.getenv('HOME')
 vim.opt.backupdir = HOME .. "/.local/share/nvim/backup"
@@ -302,7 +306,7 @@ vim.keymap.set({'n', 'x'}, 'cp', '"+y')
 vim.keymap.set({'n', 'x'}, 'cv', '"+p')
 vim.keymap.set({'n', 'x'}, 'x', '"_x')
 vim.keymap.set('n', '<leader>a', ':keepjumps normal! ggVG<cr>')
-vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+-- vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 
 
 vim.opt.termguicolors = true
