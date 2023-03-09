@@ -36,3 +36,9 @@ vim.keymap.set('n', '<leader>a', ':keepjumps normal! ggVG<cr>')
 vim.opt.termguicolors = true
 vim.o.background = 'light'
 vim.cmd.colorscheme('vscode')
+
+
+if vim.g.neovide then
+    -- Put anything you want to happen only in Neovide here
+    vim.o.guifont = "JetBrains Mono,Noto Color Emoji:h20"
+end
