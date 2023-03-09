@@ -14,12 +14,11 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   "Mofiqul/vscode.nvim",
 })
-{{ else }}
+{{- else }}
 require("lazy").setup({
   "Mofiqul/vscode.nvim",
 })
-{{ end }}
-
+{{- end }}
 vim.opt.encoding="utf-8"
 vim.g.mapleader = ","
 HOME = os.getenv('HOME')
