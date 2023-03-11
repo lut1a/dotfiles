@@ -35,8 +35,7 @@ sudo ln -rsf /dev/null /etc/udev/rules.d/61-gdm.rules
 sudo cp "$HOME"/etcbkp/udev/rules.d/* /etc/udev/rules.d/
 sudo mkdir -pv /etc/pacman.d/hooks
 sudo mkdir -pv /etc/pacman.d/scripts
-sudo cp "$HOME"/etcbkp/pacman.d/hooks/95-systemd-boot.hook /etc/pacman.d/hooks/95-systemd-boot.hook
-sudo cp "$HOME"/etcbkp/mkinitsudo cpio.conf /etc/mkinitsudo cpio.conf
-sudo cp "$HOME"/etcbkp/mkinitsudo cpio.d/* /etc/mkinitsudo cpio.d/
+sudo cp "$HOME"/etcbkp/mkinitcpio.conf /etc/mkinitcpio.conf
+sudo cp "$HOME"/etcbkp/mkinitcpio.d/* /etc/mkinitcpio.d/
 
 sudo cp "$HOME"/etcbkp/modprobe.d/nouveau_blacklist.conf /etc/modprobe.d/nouveau_blacklist.conf
