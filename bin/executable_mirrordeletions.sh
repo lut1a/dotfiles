@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+#This script will compare the main list of packages maintained
+#in the git repo and delete packages missing from the list
+#will help maintain identical installations across multiple computers
 mkdir /run/user/"$UID"/mirrord
 
 comm -23 <(pacman -Qneq | sort) <(pacman -Qqg -g gnome | sort | uniq) |
