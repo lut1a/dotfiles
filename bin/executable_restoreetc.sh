@@ -12,6 +12,7 @@ read asusg14
 if [ "$asusg14" = "y" ]; then
 	sudo systemctl enable nvidia-suspend.service nvidia-resume.service nvidia-hibernate.service
 	echo "nvidia services have been activated"
+	sudo cp "$HOME"/etcbkp/modprobe.d/sp1500_tco.conf /etc/modprobe.d/sp1500_tco.conf
 else
 	echo "doing nothing"
 fi

@@ -30,5 +30,6 @@ cp /etc/kernel/cmdline "$HOME"/etcbkp/kernel/cmdline
 cp /etc/mkinitcpio.conf "$HOME"/etcbkp/mkinitcpio.conf
 cp /etc/mkinitcpio.d/* "$HOME"/etcbkp/mkinitcpio.d/
 cp /etc/modprobe.d/nouveau_blacklist.conf "$HOME"/etcbkp/modprobe.d/nouveau_blacklist.conf
+cp /etc/modprobe.d/sp1500_tco.conf "$HOME"/etcbkp/modprobe.d/sp1500_tco.conf
 
 chezmoi add "$HOME"/etcbkp/
