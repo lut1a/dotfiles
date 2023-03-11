@@ -2,4 +2,7 @@
 lost+found/
 perl5/
 Downloads/
-
+compatdata/
+downloading/
+shadercache/
+temp/
