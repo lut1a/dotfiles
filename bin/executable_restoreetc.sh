@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
-echo -n "is it the first time this system is being setup? y/n"
+echo "is it the first time this system is being setup? y/n: "
 read firstboo
 if [ "firstboo" = "y" ]; then
 	sudo systemctl enable --now NetworkManager.service ModemManager.service bluetooth.service systemd-resolved.service systemd-timesyncd.service systemd-oomd.service gdm.service fstrim.timer
 else
-	echo -n "doing nothing"
+	echo "doing nothing"
 fi
 # asus G14
-echo -n "Asus G14? y/n" 
+echo "Asus G14? y/n: " 
 read asusg14
-if [ "$asusg14" ]; then
+if [ "$asusg14" = "y" ]; then
 	sudo systemctl enable nvidia-suspend.service nvidia-resume.service nvidia-hibernate.service
-	echo -n "nvidia services have been activated"
+	echo "nvidia services have been activated"
 else
-	echo -n "doing nothing"
+	echo "doing nothing"
 fi
 
 sudo cp "$HOME"/etcbkp/locale.conf /etc/locale.conf
