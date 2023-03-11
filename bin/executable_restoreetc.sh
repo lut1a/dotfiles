@@ -1,8 +1,20 @@
 #!/usr/bin/env bash
-#systemctl enable --now NetworkManager.service ModemManager.service avahi-daemon.service bluetooth.service systemd-resolved.service systemd-timesyncd.service systemd-oomd.service gdm.service firewalld.service 
-#systemctl enable fstrim.timer
-#nvidia only 
-#systemctl enable nvidia-suspend.service nvidia-resume.service nvidia-hibernate.service
+echo -n "is it the first time this system is being setup? y/n"
+read firstboo
+if [ "firstboo" = "y" ]; then
+	sudo systemctl enable --now NetworkManager.service ModemManager.service avahi-daemon.service bluetooth.service systemd-resolved.service systemd-timesyncd.service systemd-oomd.service gdm.service firewalld.service fstrim.timer
+else
+	echo -n "doing nothing"
+fi
+# asus G14
+echo -n "Asus G14? y/n" 
+read asusg14
+if [ "$asusg14" ]; then
+	sudo systemctl enable nvidia-suspend.service nvidia-resume.service nvidia-hibernate.service
+	echo -n "nvidia services have been activated"
+else
+	echo -n "doing nothing"
+fi
 
 sudo cp "$HOME"/etcbkp/locale.conf /etc/locale.conf
 sudo cp "$HOME"/etcbkp/locale.gen /etc/locale.gen
