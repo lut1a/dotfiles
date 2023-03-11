@@ -2,7 +2,7 @@
 echo -n "is it the first time this system is being setup? y/n"
 read firstboo
 if [ "firstboo" = "y" ]; then
-	sudo systemctl enable --now NetworkManager.service ModemManager.service avahi-daemon.service bluetooth.service systemd-resolved.service systemd-timesyncd.service systemd-oomd.service gdm.service firewalld.service fstrim.timer
+	sudo systemctl enable --now NetworkManager.service ModemManager.service bluetooth.service systemd-resolved.service systemd-timesyncd.service systemd-oomd.service gdm.service fstrim.timer
 else
 	echo -n "doing nothing"
 fi
