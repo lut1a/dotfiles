@@ -5,7 +5,7 @@
 mkdir /run/user/"$UID"/mirrord
 
 comm -23 <(pacman -Qneq | sort) <(pacman -Qqg -g gnome | sort | uniq) |
-	grep -v 'radeon\|nvidia\|intel\|amd\|linux\|pacman\|mesa\|pipewire\|wireplumber\|libpulse\|qt5\|gnome' >/run/user/"$UID"/mirrord/archpkgs.txt
+	grep -v 'radeon\|nvidia\|intel\|amd\|linux\|pacman\|mesa\|pipewire\|wireplumber\|libpulse\|qt5\|mutter\|gnome' >/run/user/"$UID"/mirrord/archpkgs.txt
 
 pacman -Qmeq >/run/user/"$UID"/mirrord/aurpkgs.txt
 comm -13 "$HOME"/bin/archpkgs.txt /run/user/"$UID"/mirrord/archpkgs.txt > /run/user/"$UID"/mirrord/archpkgs2.txt
