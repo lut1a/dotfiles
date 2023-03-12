@@ -30,8 +30,12 @@ gopass-jsonapi
 iotop
 iwd
 lf
+lib32-libva-mesa-driver
+lib32-mesa-vdpau
+libva-mesa-driver
 man-db
 man-pages
+mesa-vdpau
 micro
 minizip
 mkinitcpio
