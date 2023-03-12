@@ -5,7 +5,7 @@ alias pkgupd='systemd-run --scope --user tmux new -s upgrade "sudo pacman -Syu ;
 {{- end }}
 {{- if eq .chezmoi.osRelease.name "Debian GNU/Linux" }}
 alias pkgupd='systemd-run --scope --user tmux new -s upgrade "sudo apt update ; sudo apt upgrade ; exec bash"'
-{{- end  }}
+{{- end }}
 alias vim='nvim'
 alias tmuxc='tmux new -s'
 alias n='tmux new-window'
@@ -42,32 +42,45 @@ alias ll='ls -l'
 alias lla='ls -lA'
 alias la='ls -A'
 
-
 alias h='history'
 alias j='jobs -l'
 alias bc='bc -l'
 alias installgodoc='go install golang.org/x/tools/cmd/godoc@latest'
 alias godoc='\godoc -http=:6060'
 
-man ()
-{
-    env \
-        LESS_TERMCAP_mb=$(tput bold; tput setaf 6) \
-        LESS_TERMCAP_md=$(tput bold; tput setaf 6) \
-        LESS_TERMCAP_me=$(tput sgr0) \
-        LESS_TERMCAP_se=$(tput rmso; tput sgr0) \
-        LESS_TERMCAP_ue=$(tput rmul; tput sgr0) \
-        LESS_TERMCAP_us=$(tput smul; tput bold; tput setaf 4) \
-        LESS_TERMCAP_mr=$(tput rev) \
-        LESS_TERMCAP_mh=$(tput dim) \
-        LESS_TERMCAP_ZN=$(tput ssubm) \
-        LESS_TERMCAP_ZV=$(tput rsubm) \
-        LESS_TERMCAP_ZO=$(tput ssupm) \
-        LESS_TERMCAP_ZW=$(tput rsupm) \
-        man "$@"
+man() {
+	env \
+		LESS_TERMCAP_mb=$(
+			tput bold
+			tput setaf 6
+		) \
+		LESS_TERMCAP_md=$(
+			tput bold
+			tput setaf 6
+		) \
+		LESS_TERMCAP_me=$(tput sgr0) \
+		LESS_TERMCAP_se=$(
+			tput rmso
+			tput sgr0
+		) \
+		LESS_TERMCAP_ue=$(
+			tput rmul
+			tput sgr0
+		) \
+		LESS_TERMCAP_us=$(
+			tput smul
+			tput bold
+			tput setaf 4
+		) \
+		LESS_TERMCAP_mr=$(tput rev) \
+		LESS_TERMCAP_mh=$(tput dim) \
+		LESS_TERMCAP_ZN=$(tput ssubm) \
+		LESS_TERMCAP_ZV=$(tput rsubm) \
+		LESS_TERMCAP_ZO=$(tput ssupm) \
+		LESS_TERMCAP_ZW=$(tput rsupm) \
+		man "$@"
 }
 
-selcol ()
-{
-    awk '{print $1}'
+selcol() {
+	awk '{print $1}'
 }
