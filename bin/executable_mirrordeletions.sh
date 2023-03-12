@@ -9,6 +9,7 @@ comm -23 <(pacman -Qneq | sort) <(pacman -Qqg -g gnome | sort | uniq) |
 
 pacman -Qmeq >/run/user/"$UID"/mirrord/aurpkgs.txt
 comm -13 "$HOME"/bin/archpkgs.txt /run/user/"$UID"/mirrord/archpkgs.txt > /run/user/"$UID"/mirrord/archpkgs2.txt
+cat /run/user/"$UID"/mirrord/archpkgs2.txt
 xargs -a /run/user/"$UID"/mirrord/archpkgs2.txt sudo pacman -Rus
 comm -13 "$HOME"/bin/aurpkgs.txt /run/user/"$UID"/mirrord/aurpkgs.txt > /run/user/"$UID"/mirrord/aurpkgs2.txt
 xargs -a /run/user/"$UID"/mirrord/aurpkgs2.txt sudo pacman -Rus
