@@ -30,12 +30,8 @@ gopass-jsonapi
 iotop
 iwd
 lf
-lib32-libva-mesa-driver
-lib32-mesa-vdpau
-libva-mesa-driver
 man-db
 man-pages
-mesa-vdpau
 micro
 minizip
 mkinitcpio
@@ -56,7 +52,6 @@ nvme-cli
 nvtop
 oath-toolkit
 otf-font-awesome
-pacman-contrib
 paperkey
 pkgstats
 podman
