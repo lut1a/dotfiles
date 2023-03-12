@@ -8,7 +8,7 @@
 
 {{- $termFontSize := promptStringOnce . "termFontSize" "Your terminal font size" "18" -}}
 
-{{- $noEnc := promptStringOnce . "noEnc" "Encryption yes/no?" "no" - }}
+{{- $noEnc := promptStringOnce . "noEnc" "Encryption yes/no?" "no" -}}
 
 
 [data]
@@ -16,7 +16,7 @@
     computerType = {{ $computerType | quote }}
     bkpdrv = {{ $bkpdrv | quote }} 
     termFontSize = {{ $termFontSize | quote }}
-		noEnc = {{ $noEnc | quote }}
+    noEnc = {{ $noEnc | quote }}
 
 encryption = "gpg"
 [gpg]
