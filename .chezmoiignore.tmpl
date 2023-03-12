@@ -14,3 +14,8 @@ dsk/
 .config/systemd/
 .gnupg/
 {{- end }}
+
+{{- if eq .noEnc "yes" }}
+.gnupg/sshcontrol
+.gitconfig
+{{- end }}
