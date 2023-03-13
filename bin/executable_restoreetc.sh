@@ -14,3 +14,4 @@ sudo cp "$HOME"/etcbkp/systemd/system.conf.d/timeout.conf /etc/systemd/system.co
 sudo cp "$HOME"/etcbkp/systemd/resolved.conf.d/cloudflare.conf /etc/systemd/resolved.conf.d/cloudflare.conf
 sudo cp "$HOME"/etcbkp/udev/rules.d/* /etc/udev/rules.d/
 sudo cp "$HOME"/etcbkp/modprobe.d/nouveau_blacklist.conf /etc/modprobe.d/nouveau_blacklist.conf
+sudo cp "$HOME"/etcbkp/nftables.conf /etc/nftables.conf

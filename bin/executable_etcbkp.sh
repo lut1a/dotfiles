@@ -20,5 +20,5 @@ cp /etc/systemd/system/batterythreshold.service "$HOME"/etcbkp/systemd/system/ba
 cp /etc/vconsole.conf "$HOME"/etcbkp/vconsole.conf
 cp /etc/udev/rules.d/* "$HOME"/etcbkp/udev/rules.d/
 cp /etc/modprobe.d/nouveau_blacklist.conf "$HOME"/etcbkp/modprobe.d/nouveau_blacklist.conf
-
+cp /etc/nftables.conf "$HOME"/etcbkp/nftables.conf
 chezmoi add "$HOME"/etcbkp/
