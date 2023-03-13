@@ -1,3 +1,4 @@
+age
 aspell
 aspell-en
 aspell-fr
@@ -40,6 +41,7 @@ lsd
 man-db
 man-pages
 micro
+minisign
 minizip
 mkinitcpio
 modemmanager
