@@ -1,1 +1,0 @@
-root=UUID=5074e5aa-6668-4d46-b757-ad95cac1b96e rw rd.driver.blacklist=nouveau modprobe.blacklist=nouveau nvidia_drm.modeset=1 mitigations=off
