@@ -1,9 +1,8 @@
-{{- if eq .computerType "personalz" }}
-[".vim/pack/tpope/start/sensible"]
+{{- if eq .computerType "personal" }}
+[".oh-my-zsh"]
     type = "archive"
-    url = "https://github.com/tpope/vim-sensible/archive/refs/heads/master.zip"
+    url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
     exact = true
     stripComponents = 1
     refreshPeriod = "168h"
 {{- end }}
-
