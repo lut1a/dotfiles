@@ -1,7 +1,7 @@
 # vi: ft=sh
 alias docker='podman'
 alias info='info --vi-keys'
-alias vi='nvim -u "$HOME".config/nvim/lua/config/options.lua'
+alias vi='nvim -u "$HOME"/.config/nvim/lua/config/options.lua'
 {{- if eq .chezmoi.osRelease.name "Arch Linux" }}
 alias pkgupd='systemd-run --scope --user tmux new -s upgrade "sudo pacman -Syu ; exec bash"'
 {{- end }}
