@@ -48,6 +48,7 @@ ninja
 noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
+npm
 nvme-cli
 nvtop
 oath-toolkit
@@ -90,3 +91,4 @@ yad
 ydotool
 yt-dlp
 zram-generator
+zsh
