@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-# vi: ft=sh
-# archpkgs.txt hash: {{ include "bin/archpkgs.txt" | sha256sum }}
-{{ if eq .chezmoi.osRelease.name "Arch Linux" -}} 
-xargs -a "$HOME"/bin/archpkgs.txt sudo pacman -S --needed
-#xargs -a "$HOME"/bin/fltpkgs.txt flatpak install
-{{ end -}}
