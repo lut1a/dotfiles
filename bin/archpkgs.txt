@@ -22,7 +22,6 @@ dog
 duf
 efibootmgr
 fd
-foot
 fuse-overlayfs
 fuse2
 fzf
@@ -94,8 +93,6 @@ w3m
 weechat
 wget
 whois
-wine
-winetricks
 wireless-regdb
 wl-clipboard
 xclip
