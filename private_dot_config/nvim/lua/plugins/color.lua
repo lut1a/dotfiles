@@ -1,9 +1,10 @@
+vim.opt.background = "light"
 return {
-  { "ishan9299/modus-theme-vim" },
+  { "Mofiqul/vscode.nvim", opts = {} },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "modus-operandi",
+      colorscheme = "vscode",
     },
   },
 }
